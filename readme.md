@@ -31,11 +31,11 @@ npm install pi-sdk-lite
 ## 🔐 Authentication
 
 ```ts
-import { PiAuth } from "pi-sdk-lite";
+import { PiAuth, PiScope } from "pi-sdk-lite";
 
 async function login() {
   const result = await PiAuth.authenticate({
-    scopes: ["username", "payments"]
+    scopes: [PiScope.Username, PiScope.Payments]
   });
 
   console.log("Authenticated:", result);
@@ -161,11 +161,11 @@ function handlePayNow() {
 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
 <script src="/dist/index.global.js"></script>
 <script>
-  PiConnect.PiAuth.authenticate().then(console.log);
+  PiSdk.PiAuth.authenticate().then(console.log);
 </script>
 ```
 
-> When using `index.global.js`, the SDK is exposed under the `PiConnect` global.
+> When using `index.global.js`, the SDK is exposed under the `PiSdk` global.
 
 ---
 
@@ -182,4 +182,4 @@ function handlePayNow() {
 
 ## 🔖 License
 
-MIT © 2025 Muhammad Adamu Kala
+PiOS © 2025 Mohammed Zayyad
